@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Clima" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="PUR-8m-k6f">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QAg-Tf-qeH">
+                                <rect key="frame" x="88" y="44" width="199" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BK-KU-Ix9">
+                                <rect key="frame" x="42" y="43" width="30" height="30"/>
+                                <state key="normal" title="📌"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCV-5b-czd">
+                                <rect key="frame" x="303" y="44" width="30" height="30"/>
+                                <state key="normal" title="🔍"/>
+                                <connections>
+                                    <action selector="buscarBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9jC-a8-Pdt"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K7x-nV-45h">
+                                <rect key="frame" x="88" y="120" width="199" height="134"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIUDAD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgD-Km-5nP">
+                                <rect key="frame" x="88" y="290" width="199" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEMPERATURA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZc-hc-Pcc">
+                                <rect key="frame" x="88" y="344.5" width="199" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PUR-8m-k6f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Eu-US-FRZ"/>
+                            <constraint firstItem="LgD-Km-5nP" firstAttribute="top" secondItem="K7x-nV-45h" secondAttribute="bottom" constant="36" id="15I-zl-Vw1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PCV-5b-czd" secondAttribute="trailing" constant="42" id="2pp-hc-OdB"/>
+                            <constraint firstItem="PUR-8m-k6f" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5QB-tl-kTY"/>
+                            <constraint firstItem="K7x-nV-45h" firstAttribute="top" secondItem="QAg-Tf-qeH" secondAttribute="bottom" constant="46" id="Ec7-vH-E7a"/>
+                            <constraint firstItem="5BK-KU-Ix9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="MyQ-7i-uTb"/>
+                            <constraint firstItem="xZc-hc-Pcc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="Nki-m4-NfH"/>
+                            <constraint firstItem="5BK-KU-Ix9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="Puq-Lj-b9P"/>
+                            <constraint firstItem="LgD-Km-5nP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="VZg-uU-kWm"/>
+                            <constraint firstItem="QAg-Tf-qeH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="Ve5-jm-VGh"/>
+                            <constraint firstItem="K7x-nV-45h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="VhQ-zg-dUI"/>
+                            <constraint firstItem="PUR-8m-k6f" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aqm-iZ-LCL"/>
+                            <constraint firstItem="PCV-5b-czd" firstAttribute="leading" secondItem="QAg-Tf-qeH" secondAttribute="trailing" constant="16" id="bAu-QJ-b9u"/>
+                            <constraint firstItem="PCV-5b-czd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="by9-Go-aqN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LgD-Km-5nP" secondAttribute="trailing" constant="88" id="c94-FK-aHk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xZc-hc-Pcc" secondAttribute="bottom" constant="296" id="j9y-wr-vtC"/>
+                            <constraint firstItem="xZc-hc-Pcc" firstAttribute="top" secondItem="LgD-Km-5nP" secondAttribute="bottom" constant="28" id="l1b-Ht-cgp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xZc-hc-Pcc" secondAttribute="trailing" constant="88" id="neB-fJ-P52"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PCV-5b-czd" secondAttribute="bottom" constant="593" id="tJh-0Y-whP"/>
+                            <constraint firstItem="PUR-8m-k6f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wrv-Rc-ifN"/>
+                            <constraint firstItem="QAg-Tf-qeH" firstAttribute="leading" secondItem="5BK-KU-Ix9" secondAttribute="trailing" constant="16" id="xGc-D1-ffp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5BK-KU-Ix9" secondAttribute="bottom" constant="594" id="z4K-ps-2WC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K7x-nV-45h" secondAttribute="trailing" constant="88" id="zEh-wN-46h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="buscarTF" destination="QAg-Tf-qeH" id="1G1-Ac-1pg"/>
+                        <outlet property="ciudadLabel" destination="LgD-Km-5nP" id="qRn-Cd-KQE"/>
+                        <outlet property="climaImageView" destination="K7x-nV-45h" id="B16-64-yJg"/>
+                        <outlet property="temperaturaLabel" destination="xZc-hc-Pcc" id="UJB-X8-dAV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.40000000000001" y="89.505247376311857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sky" width="640" height="856"/>
+    </resources>
+</document>
