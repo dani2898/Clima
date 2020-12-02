@@ -15,6 +15,7 @@
 		5800891B256B428600E75509 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58008919256B428600E75509 /* LaunchScreen.storyboard */; };
 		58BE3FA32576E7D600B4F2CA /* ClimaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE3FA22576E7D600B4F2CA /* ClimaManager.swift */; };
 		58BE3FA5257758A700B4F2CA /* ClimaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BE3FA4257758A700B4F2CA /* ClimaData.swift */; };
+		58F70C002577CF2A003F5D95 /* ClimaModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F70BFF2577CF2A003F5D95 /* ClimaModelo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5800891C256B428600E75509 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58BE3FA22576E7D600B4F2CA /* ClimaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaManager.swift; sourceTree = "<group>"; };
 		58BE3FA4257758A700B4F2CA /* ClimaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaData.swift; sourceTree = "<group>"; };
+		58F70BFF2577CF2A003F5D95 /* ClimaModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaModelo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				58008914256B428400E75509 /* Clima.xcdatamodeld */,
 				58BE3FA22576E7D600B4F2CA /* ClimaManager.swift */,
 				58BE3FA4257758A700B4F2CA /* ClimaData.swift */,
+				58F70BFF2577CF2A003F5D95 /* ClimaModelo.swift */,
 			);
 			path = Clima;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F70C002577CF2A003F5D95 /* ClimaModelo.swift in Sources */,
 				58008910256B428400E75509 /* ViewController.swift in Sources */,
 				58008916256B428400E75509 /* Clima.xcdatamodeld in Sources */,
 				58BE3FA32576E7D600B4F2CA /* ClimaManager.swift in Sources */,
