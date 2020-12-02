@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    
+    let climaManager = ClimaManager()
+    
     @IBOutlet weak var buscarTF: UITextField!
     @IBOutlet weak var ciudadLabel: UILabel!
     @IBOutlet weak var temperaturaLabel: UILabel!
@@ -37,9 +40,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    @IBAction func buscarBtn(_ sender: Any) {
+    @IBAction func buscarBtn(_ sender: UIButton) {
         ciudadLabel.text = buscarTF.text
+        climaManager.fetchClima(nombreCiudad: buscarTF.text!)
     }
+    
     
 }
 
