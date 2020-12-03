@@ -8,9 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegate{
+    
+    func huboError(cualError: Error){
+        print(cualError.localizedDescription)
+        DispatchQueue.main.sync{
+            self.ciudadLabel.text = cualError.localizedDescription
+        }
+    }
     func actualizarClima(clima: ClimaModelo) {
-        temperaturaLabel.text = String(clima.temperaturaCelsius)
+       
+        DispatchQueue.main.async {
+          self.temperaturaLabel.text = String(clima.temperaturaCelsius)+" °c"
+          self.climaImageView.image = UIImage(named: clima.condicionClima)
+          self.ciudadLabel.text = clima.condicionClima
+        }
+        
+        
     }
     
     
@@ -47,6 +61,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
     @IBAction func buscarBtn(_ sender: UIButton) {
         ciudadLabel.text = buscarTF.text
         climaManager.fetchClima(nombreCiudad: buscarTF.text!)
+        
     }
     
     
