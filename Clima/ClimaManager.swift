@@ -20,6 +20,11 @@ struct ClimaManager{
         realizarSolicitud(urlString: urlString)
     }
     
+    func fetchClima(lat: Double, long: Double){
+        let urlString = "\(climaUrl)&lat=\(lat)&lon=\(long)"
+        realizarSolicitud(urlString: urlString)
+    }
+    
     func realizarSolicitud(urlString: String){
         //Crear url
         if let url = URL(string: urlString){
