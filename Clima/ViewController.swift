@@ -13,7 +13,13 @@ class ViewController: UIViewController{
     @IBOutlet weak var ciudadLabel: UILabel!
     @IBOutlet weak var temperaturaLabel: UILabel!
     @IBOutlet weak var climaImageView: UIImageView!
+    @IBOutlet weak var tempMinimaLabel: UILabel!
+    @IBOutlet weak var humedadLabel: UILabel!
     
+    @IBOutlet weak var velVientoLabel: UILabel!
+    @IBOutlet weak var descripcionLabel: UILabel!
+    @IBOutlet weak var tempMaximaLabel: UILabel!
+    @IBOutlet weak var bgImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -67,7 +73,9 @@ extension ViewController: ClimaManagerDelegate{
         print(cualError.localizedDescription)
         
         DispatchQueue.main.sync{
-            self.ciudadLabel.text = cualError.localizedDescription
+            let alert = UIAlertController(title: "Error", message: "Error en la ciudad, revise que esté escrito correctamente.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -75,9 +83,14 @@ extension ViewController: ClimaManagerDelegate{
         
         DispatchQueue.main.async {
             
-            self.temperaturaLabel.text = String(clima.temperaturaCelsius)+" °c"
+            self.temperaturaLabel.text = "Temp: "+String(clima.temperaturaCelsius)+" °C"
             self.climaImageView.image = UIImage(named: clima.condicionClima)
-            self.ciudadLabel.text = clima.nombreCiudad
+            self.bgImageView.image = UIImage(named: clima.bgClima)
+            self.ciudadLabel.text = "Ciudad: "+clima.nombreCiudad
+            self.descripcionLabel.text = clima.descripcionClima.capitalized
+            self.velVientoLabel.text = "Velocidad viento: "+String(clima.vientoVel)
+            self.tempMinimaLabel.text = "T. Min: "+String(clima.temperaturaMinima)+"°C"
+            self.tempMaximaLabel.text = "T. Max: " + String(clima.temperaturaMaxima)+"°C"
         }
         
         
@@ -88,7 +101,7 @@ extension ViewController: ClimaManagerDelegate{
 extension ViewController: UITextFieldDelegate{
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        ciudadLabel.text = buscarTF.text
+       // ciudadLabel.text = buscarTF.text
         return true
     }
     
@@ -103,8 +116,9 @@ extension ViewController: UITextFieldDelegate{
     }
 
     @IBAction func buscarBtn(_ sender: UIButton) {
-        ciudadLabel.text = buscarTF.text
+        
         climaManager.fetchClima(nombreCiudad: buscarTF.text!)
+        buscarTF.text=""
         
     }
     
